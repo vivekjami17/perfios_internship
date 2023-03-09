@@ -98,4 +98,5 @@ Mosh Hamedani
 23. Unstaging files
 24. Discarding local changes
 25. Restoring a File to an Earlier version
-
+  
+- Started Python Learning
