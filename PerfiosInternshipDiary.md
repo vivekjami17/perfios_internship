@@ -43,6 +43,7 @@ Started Learning UNIX Commands
 - scp
 - rsync
 - ps
+
 >## 6th March(UNIX Commands Continuation and End)
 - ps
 - rm 
@@ -98,5 +99,22 @@ Mosh Hamedani
 23. Unstaging files
 24. Discarding local changes
 25. Restoring a File to an Earlier version
-  
+
 - Started Python Learning
+
+>## 10th March
+- Lists
+- Dictionaries
+- Tuples
+-  Set
+- Frozen Sets
+- String
+- Linked List
+- Stack
+- Queue
+- Binary tree
+
+Modules in Python
+- OS [ref link](https://www.geeksforgeeks.org/os-module-python-examples/)
+- argparse [ref link](https://www.geeksforgeeks.org/os-module-python-examples/)
+- pandas [ref link](https://pandas.pydata.org/docs/)
