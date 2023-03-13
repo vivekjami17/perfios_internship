@@ -109,3 +109,85 @@ print(mylist)
 
 # Dictionaries
 
+
+
+# decorators
+def div(a,b):
+	return a/b
+
+def smart_div(func):
+	def inner(a,b):
+		if a < b:
+			a,b = b,a
+		return func(a,b)
+
+	return inner
+
+div = smart_div(div)
+div(2,4)
+
+'''We are creating a mew function which takes function 
+as a parameter and that's the beauty that this is not possible 
+in all the languages so yes we can do that in Python because
+ python is also a functional programming and then we can
+define a function inside a function
+which is actually replacing the code of
+div behind the scene and then we before
+calling div we are saying div is equal
+to smart div and we are passing div so
+basically we are changing the way they
+works so that's how you can use
+decorators in Python'''
+
+# classes and objects in Python
+class Person:
+	name = "Harry"
+	occupation = "SOftware Developer"
+	networth = 10
+	def info(self):
+		print(f"{self.name} is a {self.occupation}")
+
+a = Person()
+b = Person()
+
+b.name = "Nitika"
+b.occupation = "HR"
+# a.name = "Shubham"
+# a.occupation = "Accountant"
+# print(a.name, a.occupation)
+a.info()
+
+# Modules and Packages
+# sudo pip3 install <package_name>
+import math
+# from math import factorial # math k andar se factorial ko import kiya
+from math import log
+# print(math.factorial(4))
+from math import * # math lib me jitne bhi functions hein sabko uthalo
+print(log(10000))
+print(dir(math))
+print(math.factorial(4))
+
+# Lamda Expression
+def make_incrementor(n):
+    return lambda x: x + n
+
+f = make_incrementor(42)
+f(0)
+#42
+f(1)
+# 43
+# We can create modules and packages as per our own requirement
+
+## Learn karne k liye kya kya chahiye
+# Python ka
+data structures, functions, decorators, classes, modules, packeges, venv, error handling
+commonly used libraries :
+
+OS, subprocess
+datetime
+argparse
+pandas
+json
+threading
+pools(threadpool, processpool)

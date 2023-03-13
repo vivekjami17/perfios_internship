@@ -110,11 +110,24 @@ Mosh Hamedani
 - Frozen Sets
 - String
 - Linked List
-- Stack
-- Queue
+- deque - stack
+- deque - queue
 - Binary tree
+
+
 
 Modules in Python
 - OS [ref link](https://www.geeksforgeeks.org/os-module-python-examples/)
 - argparse [ref link](https://www.geeksforgeeks.org/os-module-python-examples/)
 - pandas [ref link](https://pandas.pydata.org/docs/)
+
+>## 13th March
+- Functions
+- Decorators
+- Classes and Objects
+- Modules
+- packages
+- libraries
+- framework
+- Lamda expression
+- 
