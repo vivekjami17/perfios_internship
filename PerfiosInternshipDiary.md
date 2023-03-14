@@ -130,4 +130,7 @@ Modules in Python
 - libraries
 - framework
 - Lamda expression
-- 
+
+>## 14th March
+- Venv
+- Error Handling

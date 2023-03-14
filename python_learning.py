@@ -177,6 +177,47 @@ f(0)
 #42
 f(1)
 # 43
+
+# Venv 
+# creating venv
+python3 -m venv project_env
+#pip list karke ek baar check karo
+# activating venv
+source project_env/bin/activate ''' we ll be able to see environment name left of 
+terminal 
+once it is activated
+'which python ' se kaunsa environment ka project chal rha he uska path dedega
+
+version of python venv = version of python installed in system'''
+# we can install specific packages that we can use for specific project
+# 'pip freeze' gives the correct output so as to store them in 'requirements.txt' file
+pip freeze > requirements.txt
+# deactivating the environment
+deactivate # It is the command for deactivation
+# No longer , env in the prompt
+rm -rf project_env # se pura virtual env directory ke sath delete ho jayega
+
+# isiliye pehle ek directory banao, usme venv naam ka virtual environment banayenge
+> mkdir my_project
+> python3 -m venv my_project/venv
+> source my_project/venv/binactivate # ( We activated the venv)
+>  pip install -r requirements.txt # ( It will install all packages
+# which are present in requirements.txt file)
+> pip list #(ese ham compare kar sakte hein, pichle installed package set k sath)
+> cd my_project
+> ls #(bas venv hi he usme)
+> touch script.py 
+> ls #(script.py venv) he ab
+# virtual environment should be in a way were it can be created and deleted 
+# as no project files should be present in the venv folder as we will be deleting.
+# we shouldn't commit our venv for source control
+> deactive #(deactivated the virtual environment)
+> rm -rf venv/ #(removing virtual env)
+> python3 -m venv venv --system-site-packages#(jitne packages system (global) me he )
+> 
+
+
+
 # We can create modules and packages as per our own requirement
 
 ## Learn karne k liye kya kya chahiye
