@@ -279,3 +279,36 @@ abc.txtx  file.txt
 guest@vaibhavraj-Latitude-5531:~$ 
 ```
 ## Task Done!!!
+
+>## March 15
+1. 
+  - Problem Statements discussed with Snigdha and teammates
+Output of Ansible script provided by Athena
+Understand the output looking like
+Code - extract karke pdf report
+
+ - Pdf report
+Data avail for ops team (any changes being made )
+Through Ops team.
+----------------
+2. - Metrics-
+      - Uptime (Devops team worked on)
+      - Downtime
+      - Capactiy
+      - App - req, n/w, throughput , income and outgoing req etc
+
+- Making sense - Grapgh (bar, line,gauge etc)
+- Elastic search 
+- Python - plotly
+- Prometheus Graphana 
+- D3JS -  JS Library
+Inputs in diff file format
+Framework`
+Automated, monthly wise, date range (All in graphs)
+-----------------
+### Explore:-
+1. **D3JS**
+2. **ANsible**
+--------
+Both have Python has a base
+
