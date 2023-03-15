@@ -146,6 +146,8 @@ Modules in Python
 - Establish connection between 5 machines
 - View files and directories after connection
 - Transfer files from one machine to another machine 
+-------
+* All the tasks to be done without password also
 
 >## tasks accomplished
 - Using `ssh` to establish connection between different linux machines.
@@ -198,7 +200,7 @@ Desktop  Downloads  Pictures  snap    Videos
 vaibhavraj@vaibhavraj-Latitude-5531:~$ whoami
 vaibhavraj
 ```
-- Transfered files from `vaibhavraj` user
+2.  Transfered files from `vaibhavraj` user *( another machine to my machine)*
 ```bash
 vaibhavraj@vaibhavraj-Latitude-5531:~$ ls
 abc.txt  Documents  Music     Public  Templates
@@ -211,3 +213,69 @@ abc.txt                                       100%    8     0.6KB/s   00:00
 vaibhavraj@vaibhavraj-Latitude-5531:~$ 
 ```
 
+3. Transfering files to a **destination path** (my machine to another machine)
+```bash
+vivek@vivek-Latitude-5531:~/perfios_internship$ scp file@vivek.txt vaibhavraj@192.168.10.94:/home/vaibhavraj/Downloads
+vaibhavraj@192.168.10.94's password: 
+file@vivek.txt                                100%    0     0.0KB/s   00:00   
+```
+# Remote Log In (W/O Password)
+4. Establishing **SSH** connection between 5 machines.
+  - Create a guest account in all machines with same passwords.
+  ```bash
+  vivek@vivek-Latitude-5531:~$ sudo adduser guest
+  ```
+  ```bash
+  guest@vivek-Latitude-5531:~$ ssh guest@192.168.10.94
+The authenticity of host '192.168.10.94 (192.168.10.94)' can't be established.
+ECDSA key fingerprint is SHA256:ZqJv9EkLkKPQMlDTCIk6py66cJUV0N3bTc3YJEambn0.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.10.94' (ECDSA) to the list of known hosts.
+guest@192.168.10.94's password: 
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.14.0-1058-oem x86_64)
+
+  ```
+  - Logging into the Guest account has three steps/ commmands to be executed :-
+
+  ```bash
+  guest@vivek-Latitude-5531:/home/vivek$ ssh-keygen -b 4096
+  The key's randomart image is:
++---[RSA 4096]----+
+|                 |
+|       . o       |
+|        + o      |
+|       +   .     |
+|      . S .      |
+|    .o.+.O o     |
+|    oo=+=o*      |
+|  . .XB*E+       |
+|   +OX%Ooo       |
++----[SHA256]-----+
+  ```
+  ```bash
+  guest@vivek-Latitude-5531:~$ ssh-copy-id guest@192.168.10.94
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/guest/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new key
+  ```
+  Logging in :-
+  ```bash
+  guest@vivek-Latitude-5531:~$ ssh guest@192.168.10.94
+
+  ```
+  Viewing and Transferring files in another account( guest )
+  ```bash
+  guest@vaibhavraj-Latitude-5531:~$ ls
+guest@vaibhavraj-Latitude-5531:~$ touch abc.txtx
+guest@vaibhavraj-Latitude-5531:~$ ls
+abc.txtx
+guest@vaibhavraj-Latitude-5531:~$ ls
+abc.txtx
+guest@vaibhavraj-Latitude-5531:~$ ls
+abc.txtx
+guest@vaibhavraj-Latitude-5531:~$ echo "Vivek's file" > file.txt
+guest@vaibhavraj-Latitude-5531:~$ ls
+abc.txtx  file.txt
+guest@vaibhavraj-Latitude-5531:~$ 
+```
+## Task Done!!!
