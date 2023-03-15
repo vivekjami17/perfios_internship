@@ -134,3 +134,80 @@ Modules in Python
 >## 14th March
 - Venv
 - Error Handling
+  
+- ## Creating a SSH tunnel
+  - SSH tunneling, or SSH port forwarding, is a method of transporting arbitrary data over an encrypted SSH connection. SSH tunnels allow connections made to a local port (that is, to a port on your own desktop) to be forwarded to a remote machine via a secure channel. 
+
+ - Local Port Forwarding 
+ - Remote port forwarding
+ - Dynamic Port forwarding 
+
+>## task assigned
+- Establish connection between 5 machines
+- View files and directories after connection
+- Transfer files from one machine to another machine 
+
+>## tasks accomplished
+- Using `ssh` to establish connection between different linux machines.
+```bash
+ sudo apt update
+ sudo apt install openssh-server 
+```
+- Established connection with 'vaibhavraj' user using the below ssh command
+
+```bash
+vivek@vivek-Latitude-5531:~$ ssh vaibhavraj@192.168.10.94
+The authenticity of host '192.168.10.94 (192.168.10.94)' can't be established.
+ECDSA key fingerprint is SHA256:ZqJv9EkLkKPQMlDTCIk6py66cJUV0N3bTc3YJEambn0.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes 
+Warning: Permanently added '192.168.10.94' (ECDSA) to the list of known hosts.
+vaibhavraj@192.168.10.94's password: 
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.14.0-1058-oem x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+
+     https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+9 updates can be applied immediately.
+6 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+vaibhavraj@vaibhavraj-Latitude-5531:~$ ls
+abc.txt  Documents  Music     Public  Templates
+Desktop  Downloads  Pictures  snap    Videos
+vaibhavraj@vaibhavraj-Latitude-5531:~$ whoami
+vaibhavraj
+```
+- Transfered files from `vaibhavraj` user
+```bash
+vaibhavraj@vaibhavraj-Latitude-5531:~$ ls
+abc.txt  Documents  Music     Public  Templates
+Desktop  Downloads  Pictures  snap    Videos
+vaibhavraj@vaibhavraj-Latitude-5531:~$ cat abc.txt
+gfh hfi
+vaibhavraj@vaibhavraj-Latitude-5531:~$ scp abc.txt vivek@192.168.10.104:/home/vivek/perfios_internship
+vivek@192.168.10.104's password: 
+abc.txt                                       100%    8     0.6KB/s   00:00    
+vaibhavraj@vaibhavraj-Latitude-5531:~$ 
+```
+
