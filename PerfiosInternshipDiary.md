@@ -281,15 +281,15 @@ guest@vaibhavraj-Latitude-5531:~$
 ## Task Done!!!
 
 >## March 15
-1. 
-  - Problem Statements discussed with Snigdha and teammates
-Output of Ansible script provided by Athena
-Understand the output looking like
-Code - extract karke pdf report
 
- - Pdf report
-Data avail for ops team (any changes being made )
-Through Ops team.
+v- Problem Statements discussed with Snigdha and teammates
+
+1.  - Ansible for Deployment 
+    - Output of Ansible script provided by Athena
+    -  Understand the output looking like
+    - Code - extract karke pdf report
+    - Pdf report
+    - Data avail for ops team (any changes being made ) through Ops team.
 ----------------
 2. - Metrics-
       - Uptime (Devops team worked on)
@@ -306,9 +306,18 @@ Inputs in diff file format
 Framework`
 Automated, monthly wise, date range (All in graphs)
 -----------------
-### Explore:-
+### Explored:-
 1. **D3JS**
 2. **ANsible**
 --------
 Both have Python has a base
+
+>## March 16
+Project Name : **Secura**
+--------------------
+CIS Compliance report based on Ansible Dry Run Output.Parse the output of the Ansible Dry Run/Check of CIS Ansible scripts run for one or many hosts and generate a report based on current server setup and whether any changes are to be made or not. 
+
+Project Name : **Nebula**
+------------------------------
+Coverage of different variations of _**Devops Metrics**_(uptime, capacity etc) using D3.JS visualisations. 
 
