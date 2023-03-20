@@ -317,7 +317,90 @@ Project Name : **Secura**
 --------------------
 CIS Compliance report based on Ansible Dry Run Output.Parse the output of the Ansible Dry Run/Check of CIS Ansible scripts run for one or many hosts and generate a report based on current server setup and whether any changes are to be made or not. 
 
+>## Process
+
+- 
+  - To generate a CIS compliance report for a dry run of CIS Ansible scripts, you can use the ```--check``` flag with the ansible-playbook command. This flag performs a dry run of the playbook and reports any changes that would be made without actually making them.
+Here's an example command to generate a CIS compliance report for a dry run of Ansible scripts:
+
+```bash
+ansible-playbook <Our Ansible playbook file> --check
+```
+
+  - This command will perform a dry run of the playbook and report any changes that would be made if it were run normally.
+To generate a more detailed compliance report, we can use _**Ansible Tower**_ or other third-party tools that provide reporting capabilities. These tools can provide _detailed reports_ on **compliance status, including which rules are passing or failing**, and what remediation steps are required to bring systems into compliance.
+  - It's important to note that while Ansible can help automate many aspects of IT compliance, it is not a silver bullet. Compliance is an ongoing process that requires continuous monitoring and remediation efforts to ensure systems remain secure and compliant over time[3].
+
+>### Research
+- _**Cis Compliance Report**_
+  - _**CIS compliance**_ refers to **meeting the security standards set by the Center for Internet Security (CIS) benchmarks**. These benchmarks are internationally recognized as security standards for _defending IT systems and data against cyberattacks_. The CIS Benchmarks are prescriptive configuration recommendations for more than 25+ vendor product families, representing a consensus-based effort of cybersecurity experts. They provide **detailed configuration recommendations** for _strengthening specific systems, network devices, and applications_.
+- _**Ansible Dry Run**_
+  - _**What is Ansible Dry Run?**_
+    - Ansible dry run, also known as **check mode**, is a feature that _**allows you to execute an Ansible playbook without actually making changes on the server**_. This enables users to see _what changes would be made if the playbook were run normally_. The easiest way to do a dry run in Ansible is **to use the check mode**, which works like the 
+    ```--syntax-check``` command but on a playbook level. When ansible-playbook is executed with ```--check```, _**it will not make any changes on remote hosts and instead shows what changes would have been made**_.
+  - _**How to parse the output of Ansible Dry Run?**_
+    - Parsing the output of an Ansible dry run can be done using various methods:-
+      -  Use the **ansible.utils** collection version 1.0.0 or later, which includes the **cli_parse module** that can run CLI commands and parse semi-structured text output[1]. Another way is to use the check mode, which works like the --syntax-check command but on a playbook level[2]. Additionally, parsing API call's output in Ansible can be done by using JSON output[3]. There are also scripts available on platforms like GitHub that wrap ansible-review and post-process the output to make it easier to parse[4]. The method used for parsing the output depends on the specific requirements of each situation.
+
+  - Elastic Stack:-
+    - **Elastic Search**
+      - _**Elastic search**_ is a fast and scalable search and analytics engine that is at the heart of the _Elastic Stack_. 
+      - It is a modern search and analytics engine based on **Apache Lucene**, which provides a distributed, multitenant-capable full-text search engine with an **HTTP web interface and schema-free JSON documents**.
+      - Elasticsearch is completely open source and has quickly become the most popular distributed search engine in use today. It can be used to store, search, and analyze large volumes of data in real-time.
+      - Elasticsearch is often used for log analysis, full-text search, security analytics, business analytics, and operational intelligence.
+    - **Log Stash**
+      - _**Logstash**_  is a free and open server-side data processing pipeline that _ingests data from a multitude of sources, transforms it, and then sends it to your desired destination._ 
+      - It is part of the Elastic Stack along with _**Beats, Elasticsearch, and Kibana**_. 
+      - _**Logstash**_ is responsible for aggregating data from different sources and is often used as the _"L" in the ELK Stack_, which is the **world's most popular log analysis platform.** 
+      - _**Logstash**_ can be _used for managing events and logs by collecting, processing, and storing them in a centralized location._
+      - It has input and output configurations that can be customized to meet specific requirements.
+    - **Kibana**
+      - _**Kibana**_  is a visual interface tool that allows users to explore, visualize, and build a dashboard over the log data massed in Elasticsearch Clusters. 
+      - It is part of the Elastic Stack and _can be used for data analytics at speed and scale for observability, security, and search._
+      - Kibana provides powerful analysis on any data from any source, including threat detection, application monitoring, and operational intelligence.
+      - It is often used to _**visualize trends in log data and metrics**_ alongside other tools like **Grafana**. 
+      - Kibana sits at the top of the Elastic Stack and allows users to search and visualize the data stored in Elasticsearch clusters.
+      - With Kibana, users can create visualizations and add them to dashboards for easy access to important information.
+
+>## 17th March (Research)
 Project Name : **Nebula**
 ------------------------------
 Coverage of different variations of _**Devops Metrics**_(uptime, capacity etc) using D3.JS visualisations. 
 
+>### Research
+- **Process**
+  - _**D3.js**_ is a JavaScript library that can be used to create interactive and dynamic data visualizations on the web. 
+  - To plot different DevOps metrics like uptime, downtime, and capacity using D3.js visualizations, users can first collect the relevant data using tools like LogicMonitor or Dynatrace!.
+  [1](https://www.logicmonitor.com/support/devices/adding-managing-devices/graphs-tab-device-dashboards)
+  [2](https://www.dynatrace.com/news/tag/lifecycle-devops/feed/)
+  - Once the data has been collected, it can be processed and transformed into a format that can be used by D3.js.
+  - Users can then use D3.js to create custom visualizations that display the relevant metrics in an interactive and dynamic way. 
+  [3](https://itjumpstart.files.wordpress.com/2019/09/theartofmonitoring.pdf)
+  - The specific type of visualization used will depend on the specific requirements of each situation. 
+  - For example, line charts or bar charts could be used to display uptime and downtime metrics over time, while scatter plots could be used to show correlations between different metrics such as capacity and response time.
+  [4](https://www.altexsoft.com/blog/devops-metrics/)
+
+- _**What is d3.js and How does it work ?**_
+  - D3.js is an open-source JavaScript library that allows users to create custom interactive data visualizations in the web browser
+  [1](https://website.education.wisc.edu/~swu28/d3t/)
+  [2](https://www.tutorialsteacher.com/d3js/what-is-d3js)
+  - It stands for Data-Driven Documents and was developed by Mike Bostock[2]. 
+  - D3.js works by binding arbitrary data to a Document Object Model (DOM) and then applying data-driven transformations to the document
+  [3](https://d3js.org/) 
+  - This allows users to manipulate, change, or add to the DOM based on the data being visualized. D3.js uses HTML, CSS, and SVG to create visual representations of data[4](https://www.freecodecamp.org/news/learn-d3-js-in-5-minutes-c5ec29fb0725/) 
+  - Users can create a wide range of visualizations using D3.js, including line charts, bar charts, scatter plots, and more. The library provides a powerful set of tools for working with data in the browser and creating dynamic and interactive visualizations that can be used for a variety of applications.[5](https://www.tutorialspoint.com/d3js/d3js_introduction.htm)
+
+  - _Uptime_ :-
+   - Uptime refers to the amount of time that a system or service is available and operational.
+   - It is often used as a measure of reliability and can be expressed as a percentage of total time[link](https://englishwithkim.com/clarifying-confirming-understanding/).
+   - For example, if a system has an uptime of 99%, it means that it was available and operational for 99% of the total time it was supposed to be running.
+   - Uptime is an important metric for many systems, particularly those that are critical to business operations or customer experience.
+   - It can be monitored using various tools and techniques, including network monitoring software, log analysis, and performance testing[2][link](https://textcortex.com/post/how-to-rephrase-question-into-a-sentence).
+   - By monitoring uptime, organizations can identify potential issues before they become major problems and take steps to improve the reliability and availability of their systems[3][link](https://www.indeed.com/career-advice/interviewing/respond-to-questions).
+_
+  - _Downtime_ and _Network Capacity_:-
+    - Downtime and network capacity are important metrics for measuring the success of DevOps practices. Downtime refers to the amount of time that a system or service is unavailable or not operational[1](https://www.appdynamics.com/topics/devops-metrics-and-kpis)[2](https://www.alibabacloud.com/blog/devops-how-to-have-less-downtime_594973).
+    - It can be measured using various tools and techniques, including network monitoring software, log analysis, and performance testing. Network capacity refers to the maximum amount of data that can be transmitted over a network in a given period of time[3](https://cloud.google.com/architecture/devops/devops-measurement-wip-limits).
+    - It is an important metric for ensuring that systems can handle the expected load and traffic.
+    - Network capacity can be monitored using tools like load testing software and network traffic analysis tools[4](https://phoenixnap.com/blog/devops-metrics-kpis).
+    - By monitoring downtime and network capacity, organizations can identify potential issues before they become major problems and take steps to improve the reliability and availability of their systems[5](https://www.dynatrace.com/news/blog/devops-metrics-for-success/).
