@@ -313,6 +313,37 @@ Automated, monthly wise, date range (All in graphs)
 Both have Python has a base
 
 >## March 16
+
+#### Ansible Script :-
+
+- An Ansible script is a set of instructions written in **YAML format** that defines the tasks to be executed by _Ansible on one or more remote hosts_. 
+- These scripts are called playbooks and they allow administrators to automate the configuration and deployment of software and infrastructure across multiple servers.
+
+<!-- [1][2][3][4][5]. -->
+- Ansible playbooks consist of a series of tasks, each of which defines an action to be taken on a remote host.
+- For example, a task might install a package, create a user account, or modify a configuration file. Playbooks can also include variables, loops, conditionals, and other constructs that allow for complex logic and customization.
+
+Here is an example of an Ansible playbook that installs Apache web server on multiple hosts:
+
+```bash
+- name: Install Apache web server
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Install Apache package
+      apt:
+        name: apache2
+        state: present
+
+    - name: Start Apache service
+      systemd:
+        name: apache2.service
+        state: started
+```
+
+In this example, the playbook has two tasks. The first task installs the apache2 package using the apt module.
+
 Project Name : **Secura**
 --------------------
 CIS Compliance report based on Ansible Dry Run Output.Parse the output of the Ansible Dry Run/Check of CIS Ansible scripts run for one or many hosts and generate a report based on current server setup and whether any changes are to be made or not. 
@@ -404,3 +435,90 @@ _
     - It is an important metric for ensuring that systems can handle the expected load and traffic.
     - Network capacity can be monitored using tools like load testing software and network traffic analysis tools[link](https://phoenixnap.com/blog/devops-metrics-kpis).
     - By monitoring downtime and network capacity, organizations can identify potential issues before they become major problems and take steps to improve the reliability and availability of their systems[link](https://www.dynatrace.com/news/blog/devops-metrics-for-success/).
+
+    --------------------
+    >## 20th March
+
+    >### Project 3 - Write Ansible scripts to harden a server based on CIS benchmarks (Cyber Security)
+
+    ### _**Research :-**_
+
+    #### _Hardening a Server_ :-
+
+    - Hardening a server involves implementing security measures to reduce the risk of vulnerabilities and attacks. 
+    - One way to harden a server is by using the CIS benchmarks, which provide guidelines for securing various operating systems and applications. 
+    - Ansible can be used to automate the process of hardening servers based on these benchmarks[1][2][3][4][5].
+    - To harden a server using Ansible, we can create an Ansible playbook that includes tasks for each benchmark item. For example, we can use the cis_security role from Ansible Galaxy to apply the CIS benchmarks to our servers:
+        
+    ```bash
+    - name: Harden servers with CIS benchmarks
+      hosts: all
+      become: true
+
+      roles:
+        - cis_security
+    ```
+
+    - This playbook applies the **cis_security** role to all hosts and uses become to run tasks as root. The **cis_security** role includes tasks for applying various security controls based on the _CIS benchmarks_.
+    - Other tasks that can be included in a hardening playbook include configuring firewalls, _**enabling SELinux or AppArmor**_, disabling unnecessary services, setting password policies, and more. By automating these tasks with Ansible, we can ensure that our servers are consistently hardened and reduce the risk of vulnerabilities and attacks.
+    - In summary, hardening a server involves implementing security measures to reduce the risk of vulnerabilities and attacks. Using the CIS benchmarks and Ansible can help automate this process by providing guidelines for securing servers and automating the implementation of security controls.
+
+
+    ### _Benefits of hardening a Server :-_
+    - Using Ansible for server hardening has several benefits. Firstly, it allows for the creation of a known-good configuration for all servers in an environment, which helps to enforce a consistent security posture and reduce the risk of vulnerabilities[1]. 
+    - Secondly, Ansible uses SSH for communications, which is a more secure method as the traffic is encrypted[2].
+    - Thirdly, Ansible can automate the process of hardening servers by executing tasks across multiple hosts simultaneously, saving time and effort[3].
+    - Fourthly, Ansible's Playbook syntax allows for easy definition of secure configurations for different parts of a system[4].
+    - Finally, using Ansible can help organizations achieve compliance with security standards such as CIS benchmarks or HIPAA by automating the implementation of security controls[1][4].
+
+    - In summary, using Ansible for server hardening provides several benefits including consistent security posture enforcement, secure communication via SSH, automation of hardening tasks across multiple hosts, easy definition of secure configurations using Playbooks and compliance with security standards.
+
+    #### _To harden a server based on CIS benchmarks using Ansible, we can create an Ansible playbook that includes tasks for each benchmark item. The following is an example of how to use Ansible to harden a newly-deployed Ubuntu 20.04 server based on the CIS Ubuntu Linux 20.04 LTS Benchmark[1]:_
+```bash
+  name: Harden Ubuntu 20.04 Server
+  hosts: all
+  become: true
+  tasks:
+    - name: Install auditd package
+      apt:
+        name: auditd
+        state: present
+    - name: Configure auditd rules
+      copy:
+        src: files/audit.rules
+        dest: /etc/audit/rules.d/audit.rules
+        owner: root
+        group: root
+        mode: '0640'
+    - name: Enable auditd service
+      systemd:
+        name: auditd.service
+        enabled: yes
+    - name: Set password policy for users
+      pam_limits:
+        domain: 'all'
+        limit_type: 'hard'
+        limit_item: 'max_pass_age'
+        value: '90'
+    - name: Disable root login via SSH
+      lineinfile:
+        path
+```
+  #### CIS Benchmarks -
+
+  - A collection of best practices for securely configuring IT systems, software, networks, and cloud infrastructure. 
+  
+  #### Why Ansible scripts are used for server hardening ?
+
+  - Ansible scripts are used to harden servers because they provide a simple and efficient way to automate the process of implementing security controls.
+  - Ansible is a configuration management tool that allows administrators to define and manage the configuration of multiple servers from a single location.
+  - By using Ansible, administrators can ensure that all servers in their environment are configured consistently and securely.
+  
+  <!-- [1][2][3]. -->
+
+  - Ansible uses SSH for communication between the control node and managed nodes, which provides an encrypted method of communication that is more secure than other methods[2]. This makes it an ideal tool for implementing security controls on servers.
+
+  - Ansible also provides a simple syntax for defining tasks and roles, which makes it easy to create playbooks that implement security controls such as firewall rules, SELinux policies, password policies, and more[4]. 
+  - Playbooks can be easily customized to meet specific security requirements or compliance standards.
+
+  In summary, Ansible scripts are used to harden servers because they provide an efficient way to automate the process of implementing security controls. Ansible's use of SSH for communication and its simple syntax for defining tasks make it an ideal tool for implementing security controls on servers.
