@@ -107,11 +107,12 @@ print(mylist)
 
 # removing elements
 
-# Dictionaries
+# DICTIONARIES
 
 
 
-# decorators
+------------------------------------------------------
+# DECORATORS
 def div(a,b):
 	return a/b
 
@@ -177,7 +178,7 @@ greet("Alice")
 # In this example, we define a decorator repeat that takes an argument num_times. This decorator returns another decorator that wraps the original function and repeats it num_times. We then apply this decorator to the greet function using the @ syntax.
 # In summary, decorators are a powerful feature in Python that allow developers to modify or enhance the behavior of functions or classes without changing their source code. They can be used to add functionality such as logging, caching, or authentication to existing code and make it more flexible and reusable.
 
-# classes and objects in Python
+# CLASSES AND OBJECTS
 class Person:
 	name = "Harry"
 	occupation = "SOftware Developer"
@@ -206,7 +207,7 @@ print(log(10000))
 print(dir(math))
 print(math.factorial(4))
 # We can create modules and packages as per our own requirement
-
+-------------------------------------------------
 # Lamda Expression
 def make_incrementor(n):
     return lambda x: x + n
@@ -217,6 +218,59 @@ f(0)
 f(1)
 # 43
 
+# 1
+# In Python, a lambda expression is a small anonymous function that can be defined without a name. It is a one-line shorthand for defining simple functions 
+# that take one or more arguments and return a value. Lambda expressions are often used in functional programming to create higher-order functions or to pass 
+# functions as arguments to other functions[1][2][3][4][5].
+# Here is an example of how to use lambda expressions in Python:
+
+# define a lambda function
+f = lambda x: x**2
+
+# call the lambda function
+result = f(5)
+
+# print the result
+print(result)
+
+# In this example, we define a lambda function that takes one argument x and returns its square. We then call this function with an argument of 5 and store the 
+# result in a variable called result. Finally, we print the result using the print() function.
+# The output of this program would be:
+25
+
+# Lambda expressions can also be used with built-in functions such as map(), filter(), and reduce() to create more complex operations on lists or other data structures.
+# For example:
+
+# use map() with a lambda expression
+numbers = [1, 2, 3, 4, 5]
+squares = list(map(lambda x: x**2, numbers))
+print(squares)
+
+# In this example, we use the built-in map() function with a lambda expression to calculate the squares of each number in a list. We then convert the result into a
+#  list using the built-in list() function and print it.
+
+# The output of this program would be:
+[1, 4, 9, 16, 25]
+
+#In summary, lambda expressions in Python are small anonymous functions that can be defined without a name. 
+# They are often used in functional programming to create higher-order functions or to pass functions as arguments to other functions.
+# Lambda expressions can also be used with built-in functions such as map(), filter(), and reduce() to create more complex operations on lists or other data structures.
+
+
+# 2 
+
+# In Python, a lambda function is an anonymous function that can have any number of arguments but can only have one expression. The syntax for a lambda function 
+# is lambda arguments: expression. Here's an example of a lambda function that takes no arguments and prints "Hello World": greet = lambda : print('Hello World'). 
+# To call this lambda function, we simply need to write greet().
+# Lambda functions are often used as arguments to higher-order functions like map(), filter(), and reduce(). For example, here's how we can use a lambda function
+#  with the filter() function to filter out even numbers from a list: numbers = [1, 2, 3, 4, 5] and then we apply the filter using the following code: 
+# filtered_numbers = list(filter(lambda x: x % 2 == 1, numbers)). This will return [1, 3, 5].
+# Lambda functions can also take multiple arguments. Here's an example of a lambda function that takes two arguments and returns their sum: sum = lambda x, y : x + y. 
+# We can call this lambda function by writing sum(3, 4), which will return 7.
+# Lambda functions are useful when we want to pass a small piece of code as an argument to another function. 
+# They are particularly useful when working with higher-order functions like map(), filter(), and reduce().
+
+-------------------------------------------------------
 # Venv 
 # creating venv
 python3 -m venv project_env
@@ -256,6 +310,35 @@ rm -rf project_env # se pura virtual env directory ke sath delete ho jayega
 > python3 -m venv venv --system-site-packages#(jitne packages system (global) me he )
 > 
 
+# Explanation
+
+# In Python, venv is a built-in module that allows developers to create virtual environments for their Python projects. A virtual environment is an isolated Python 
+# environment that contains its own installation of Python and packages. This allows developers to work on multiple projects with different dependencies without 
+# worrying about conflicts between packages[1][2][3][4][5].
+
+# Here is an example of how to use venv to create a virtual environment:
+
+
+# create a new virtual environment
+python -m venv myenv
+
+# activate the virtual environment
+source myenv/bin/activate
+
+# install packages in the virtual environment
+pip install package_name
+
+# deactivate the virtual environment
+deactivate
+
+# In this example, we use the venv module to create a new virtual environment called myenv. We then activate the virtual environment using the source command. 
+# We can then install packages using pip, which will install them only in this specific virtual environment. Finally, we can deactivate the virtual environment 
+# using the deactivate command.
+# By creating and using a separate virtual environment for each project, developers can ensure that each project has its own set of dependencies and avoid 
+# conflicts between packages.
+# In summary, venv is a built-in module in Python that allows developers to create isolated Python environments called virtual environments. Virtual environments 
+# allow developers to work on multiple projects with different dependencies without worrying about conflicts between packages.
+-------------------------------------------------------
 
 #17th March
 
@@ -292,6 +375,7 @@ finally:
 # The try-except statement provides a built-in mechanism for handling exceptions, while the finally clause can be used to execute cleanup code regardless 
 # of whether an exception occurred or not.
 
+-------------------------------------------------------
 # Thread Pool and Process Pool
 
 #In Python, thread pool and process pool can be created using the concurrent.futures module. 
@@ -332,9 +416,9 @@ with concurrent.futures.ProcessPoolExecutor(max_workers=3) as executor:
 #In summary, thread pools and process pools are useful tools for achieving parallelism in Python programs that have multiple independent tasks to perform. 
 # They allow tasks to be executed concurrently by multiple threads or processes, which can improve performance by reducing overhead associated 
 # with creating new threads or processes for each task.
-
-
+---------------------------------------------------------------------
 # Common Libraries
+----------------------------------------------------------------------
 # OS MODULE
 
 #The os module in Python provides a portable way of using operating system-dependent functionality. 
@@ -380,6 +464,7 @@ print(result)
 # print its result. In summary, the os module in Python provides a wide range of functions for working with files, directories, environment variables, and other 
 # operating system tasks. These functions allow developers to write portable code that can work across different platforms and operating systems.
 
+-------------------------------------------------
 # SUBPROCESS
 
 # In Python, the subprocess module is used to spawn new processes, connect to their input/output/error pipes, and obtain their return codes. The subprocess module 
@@ -408,6 +493,7 @@ p.communicate(input=b"Hello, world!\n")
 #  processes, connect to their input/output/error pipes, and obtain their return codes. The module provides several functions for executing external commands 
 # and interacting with running processes.
 
+--------------------------------------------
 # DATETIME 
 
 # In Python, the datetime module provides classes for working with dates and times. The module includes classes such as date, time, and datetime that allow developers to represent and manipulate dates and times in various formats[1][2][3][4][5].
@@ -457,6 +543,7 @@ print(now)
 # in various formats. The module includes methods for creating new objects representing specific dates or times as well as methods for performing arithmetic operations 
 # on them.
 
+--------------------------------------------------------
 # ARGPARSE
 
 # In Python, argparse is a module that provides an easy way to parse command-line arguments and options. It allows developers to define the arguments that their 
@@ -494,7 +581,71 @@ This would output:
 
 # PANDAS
 
+# Pandas is a Python library for data manipulation and analysis. It provides a fast, flexible, and easy-to-use data structure called a DataFrame that allows developers to work with tabular data in a variety of ways[1][2][3][4][5].
+# Here is an example of how to use Pandas to read and manipulate a CSV file:
 
+import pandas as pd
+
+# read the CSV file into a DataFrame
+df = pd.read_csv('data.csv')
+
+# print the first five rows of the DataFrame
+print(df.head())
+
+# calculate the mean of a column
+mean = df['column_name'].mean()
+
+# print the mean
+print(mean)
+
+# filter the DataFrame by a condition
+filtered_df = df[df['column_name'] > 10]
+
+# print the filtered DataFrame
+print(filtered_df)
+
+# In this example, we use Pandas to read a CSV file into a DataFrame using pd.read_csv(). We then print the first five rows of the DataFrame using df.head(). We calculate the mean of one column using df['column_name'].mean() and print it. Finally, we filter the DataFrame by one condition using df[df['column_name'] > 10] and print it.
+# Pandas provides many other functions for manipulating DataFrames, including selecting columns, filtering rows, grouping data, merging tables, and more. It also integrates well with other Python libraries such as NumPy and Matplotlib.
+# In summary, Pandas is a powerful Python library for data manipulation and analysis that provides an easy-to-use data structure called a DataFrame. It allows developers to work with tabular data in various ways and provides many functions for manipulating DataFrames.
+
+-------------------------------------------------
+# JSON
+# JSON (JavaScript Object Notation) is a lightweight data-interchange format that is easy for humans to read and write, and also easy for computers to parse and generate. In Python, JSON data can be encoded and decoded using the built-in json module[1][2][3][4][5].
+# Here is an example of how to use the json module in Python:
+
+import json
+
+# create a dictionary
+data = {
+    'name': 'John',
+    'age': 30,
+    'city': 'New York'
+}
+
+# encode the dictionary as JSON
+json_data = json.dumps(data)
+
+# print the JSON data
+print(json_data)
+
+# decode the JSON data back into a dictionary
+decoded_data = json.loads(json_data)
+
+# print the decoded dictionary
+print(decoded_data)
+
+# In this example, we create a Python dictionary called data. We then use the dumps() method from the json module to encode this dictionary as a JSON string. 
+# We print this string using the print() function. We then use the loads() method from the json module to decode this JSON string back into a Python dictionary. 
+# We print this decoded dictionary using the print() function.
+# The output of this program would be:
+
+{"name": "John", "age": 30, "city": "New York"}
+{'name': 'John', 'age': 30, 'city': 'New York'}
+
+# In summary, JSON is a lightweight data-interchange format that is easy for humans to read and write, and also easy for computers to parse and generate. 
+# In Python, JSON data can be encoded and decoded using the built-in json module. The module provides methods for encoding Python objects as JSON strings 
+# (dumps()) and decoding JSON strings back into Python objects (loads()).
+------------------------------------------
 ## Learn karne k liye kya kya chahiye
 # Python ka
 # data structures, functions, decorators, classes, modules, packeges, venv, error handling

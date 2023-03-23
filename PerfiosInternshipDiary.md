@@ -522,3 +522,16 @@ _
   - Playbooks can be easily customized to meet specific security requirements or compliance standards.
 
   In summary, Ansible scripts are used to harden servers because they provide an efficient way to automate the process of implementing security controls. Ansible's use of SSH for communication and its simple syntax for defining tasks make it an ideal tool for implementing security controls on servers.
+
+  >### 21st March
+
+  >### 23rd March
+
+  <!-- - Started Exploring D3.js
+  [YT link](https://www.youtube.com/watch?v=C4t6qfHZ6Tw) -->
+  - Making a bar chart graph
+  [YT link](https://www.youtube.com/watch?v=BDpBAFvdjYo)
+  
+  Tried Experimenting this On my Local system
+
+  ![Screenshot](images/barchart.png)
