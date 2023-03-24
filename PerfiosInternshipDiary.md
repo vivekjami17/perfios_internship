@@ -533,5 +533,12 @@ _
   [YT link](https://www.youtube.com/watch?v=BDpBAFvdjYo)
   
   Tried Experimenting this On my Local system
-
+  - Bar Chart JS
+  **(HTML, JS)**
   ![Screenshot](images/barchart.png)
+
+  >### 24th March
+
+  
+  <!-- - Started ~[D3.js tutorial ](https://www.youtube.com/playlist?list=PL6il2r9i3BqH9PmbOf5wA5E1wOG3FT22p) -->
+  
