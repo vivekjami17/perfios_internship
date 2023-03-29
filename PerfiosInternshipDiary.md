@@ -539,6 +539,23 @@ _
 
   >### 24th March
 
-  
+  Learned Basics of D3.JS
   <!-- - Started ~[D3.js tutorial ](https://www.youtube.com/playlist?list=PL6il2r9i3BqH9PmbOf5wA5E1wOG3FT22p) -->
+  
+  >### 27th March
+  - Project Assigned
+    - Nebula
+  - Tried to learn javascript , html
+
+  >## 28th March'
+  - Started the Task (Snigdha)
+  - Task - 
+    - Python Script se random numnbers ayega
+    - Using HTML and JS  
+
+  >## 29th March
+  - From FastAPI python script, we used json.dumps(), templates module/library to get from python script to the html file  
+  - Graph layout is made
+  - we have to bind the data with the graph
+
   
