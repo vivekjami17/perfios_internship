@@ -554,8 +554,23 @@ _
     - Using HTML and JS  
 
   >## 29th March
+  - **Error** faced - Was not able to send data from python (flask / fastAPI)
+  - Tried different ways to resolve:-
+    - Used /*node*/ require module, request module , exporting variables from one module to another 
+    - tried FastAPI Python code(TemplateResponse from Templates library didn't work properly as in Accessing the data of python in HTML was not possible)
   - From FastAPI python script, we used json.dumps(), templates module/library to get from python script to the html file  
-  - Graph layout is made
-  - we have to bind the data with the graph
+  
+  >## 30th March
+  - Found the solution for yesterday's problem
+    - Implemented everything in Flask micro framework of Python whatever code was written in FastAPI
+    - Used render_template method to render html files as pass on data(variables) from .py file to templates.html file(dict = my_dict)
+    - Accessed {{ dict }}  from html page
+      - scrapped the `<p>` tag 
+      - Used JSON.parse() to convert into json object
+      - Converted json object to 2 arrays for x axis and y axis
+    
+    - Constructed and coded a Bar graph
+    ![bar graph](./images/bargraph.png)
+
 
   
