@@ -596,7 +596,7 @@ _
 
 ![Bar chart and Line Chart Task](/images/bar&line.png) 
 
-- Referring [freecodecamp d3.js link](https://www.freecodecamp.org/news/d3js-tutorial-data-visualization-for-beginners/#getting-started) for learning the different kinds of attributes, featuires and functionalities.
+- Referring [freecodecamp d3.js link](https://www.freecodecamp.org/news/d3js-tutorial-data-visualization-for-beginners/#getting-started) for learning the different kinds of attributes, features and functionalities.
 
 
 
