@@ -592,7 +592,11 @@ _
 * Overall, the code uses the d3 library to create and manipulate SVG elements, scales, and axes, and to generate the bar and line charts from the input data. The code also demonstrates how to get the selected chart type from a dropdown menu and how to trigger the chart drawing function using a button click event.
 
 >## April 3rd, 2023
+- This is the Output of the yesterday's Changes
 
+![Bar chart and Line Chart Task](/images/bar&line.png) 
+
+- Referring [freecodecamp d3.js link](https://www.freecodecamp.org/news/d3js-tutorial-data-visualization-for-beginners/#getting-started) for learning the different kinds of attributes, featuires and functionalities.
 
 
 
