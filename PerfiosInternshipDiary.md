@@ -573,4 +573,35 @@ _
     ![bar graph](./images/bargraph.png)
 
 
-  
+    >## 31st March
+    - **Before Adding The Drop Down Menu**
+    - First, we define two arrays of data: ***xValues and yValues***. These arrays contain the x-axis and y-axis values for the charts, respectively.
+
+      - Next, we define some variables for the chart dimensions and margins, and create two SVG elements using the ***d3.select()*** and  ***append() functions***.
+      - For the bar chart, we create a ***band scale*** for the x-axis using ***d3.scaleBand()***, and a ***linear scale*** for the y-axis using ***d3.scaleLinear()***. We then create the ***x-axis and y-axis using d3.axisBottom() and d3.axisLeft()***, respectively, and ***append them to the SVG element using the call() function***. Finally, we ***create a rect element for each data point using the selectAll() and data() functions***, and ***set the attributes of the rect elements using the attr() function***.
+
+      - For the line chart, we create a band scale for the x-axis and a linear scale for the y-axis, just like in the bar chart. We then ***create a line generator using d3.line()***, and ***set the x and y values using the x() and y() functions***, respectively. We ***append the x-axis and y-axis to the SVG element***, and ***create a path element for the line using the append()*** function. We set the attributes of the ***path element using the attr()*** function, and ***bind the data to the element using the datum() ***function.
+
+    - **After Adding the Drop Down Menu**
+      - I provided the code for displaying a bar chart or a line chart based on the user's selection from a dropdown menu. The HTML code includes a select element with two options for the chart type, a button element to trigger the chart drawing function, and a div element to display the chart. The JavaScript code defines the drawChart() function that gets the selected chart type and the data arrays, sets the chart dimensions and margins, creates an SVG element, and generates the chart based on the selected type.
+      
+      - For the bar chart, the code uses the d3.scaleBand() function to create a band scale for the x-axis, and the d3.scaleLinear() function to create a linear scale for the y-axis. It then creates the x-axis and y-axis using the d3.axisBottom() and d3.axisLeft() functions, respectively, and appends them to the SVG element using the call() function. Finally, it creates a rect element for each data point using the selectAll() and data() functions, and sets the attributes of the rect elements using the attr() function.
+
+      - For the line chart, the code uses the same scales and axes as the bar chart, but creates a line generator using the d3.line() function instead of rect elements. It sets the x and y values of the line using the x() and y() functions, respectively, and appends the line to the SVG element using the append() function.
+
+* Overall, the code uses the d3 library to create and manipulate SVG elements, scales, and axes, and to generate the bar and line charts from the input data. The code also demonstrates how to get the selected chart type from a dropdown menu and how to trigger the chart drawing function using a button click event.
+
+>## April 3rd, 2023
+
+
+
+
+
+
+
+
+
+
+
+**Vivek**
+/** **/
