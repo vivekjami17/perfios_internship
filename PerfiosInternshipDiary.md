@@ -550,7 +550,7 @@ _
   >## 28th March'
   - Started the Task (Snigdha)
   - Task - 
-    - Python Script se random numnbers ayega
+    - Python Script se random numbers ayega
     - Using HTML and JS  
 
   >## 29th March
@@ -597,6 +597,15 @@ _
 ![Bar chart and Line Chart Task](/images/bar&line.png) 
 
 - Referring [freecodecamp d3.js link](https://www.freecodecamp.org/news/d3js-tutorial-data-visualization-for-beginners/#getting-started) for learning the different kinds of attributes, features and functionalities.
+
+>## April 4th, 2023
+- Pushed the bar and Line chart code to [Gitlab ](https://hackathon-gitlab.hinagro.com/perfios-interns/devops/nebula/-/tree/dev_vivek) into my branch in Gitlab.
+
+- Updated README.md with the given task details.
+- Created an Merge Request(MR) with reviewer as Snigdha which has a total of 5 commits and 6 changes.
+- ![Screenshot of the Opened MR](/images/gitlabt1.png)
+
+- Continued d3.js learning. [freecodecamp d3.js link](https://www.freecodecamp.org/news/d3js-tutorial-data-visualization-for-beginners/#getting-started) 
 
 
 
